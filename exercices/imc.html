@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./imc.css" />
+
+    <title>Calculadora de IMC</title>
+  </head>
+  <body>
+    <section class="container">
+      <h2>Coloque seus dados</h2>
+      <form class="calc-form container-grid">
+        <div class="input-container">
+          <input
+            class="form-input"
+            id="height"
+            type="number"
+            step="1"
+            placeholder
+            required
+          />
+          <label for="height">Altura (cm)</label>
+        </div>
+        <div class="input-container">
+          <input
+            class="form-input"
+            id="weight"
+            type="number"
+            step="0.1"
+            placeholder
+            required
+          />
+          <label for="weight">Peso (kg)</label>
+        </div>
+        <div class="input-container">
+          <input
+            class="form-input"
+            id="abdomen"
+            type="number"
+            step="0.1"
+            placeholder
+            required
+          />
+          <label for="abdomen">Circunferência abdominal (cm)</label>
+        </div>
+        <div class="input-container age-input">
+          <input
+            class="form-input"
+            id="age"
+            type="number"
+            placeholder
+            required
+          />
+          <label for="age">Idade (anos)</label>
+        </div>
+        <div class="checkbox-group biotype-container">
+          <fieldset>
+            <legend>Biotipo</legend>
+            <label for="biotype">Masculino</label>
+            <div>
+              <input id="biotype" type="checkbox" name="biotype" />
+            </div>
+            <label for="biotype">Feminino</label>
+          </fieldset>
+        </div>
+        <div class="btn-container">
+          <button type="submit">Calcular</button>
+          <button type="reset">Limpar</button>
+        </div>
+      </form>
+    </section>
+    <section class="container">
+      <div class="container-grid">
+        <figure class="gauge-container">
+          <div class="gauge"></div>
+          <div id="needle"></div>
+        </figure>
+        <div class="results-summary">
+          <h3 id="age-rate">Estatísticas para um homem adulto</h3>
+          <p id="imc-result" class="result-info">IMC igual a 20.2</p>
+          <p id="classification" class="result-info">Peso Desejável</p>
+        </div>
+        <article class="results-details">
+          <p>
+            O IMC é uma das ferramentas para avaliar o estado nutricional e o
+            risco de mortalidade, junto a outros parâmetros. Como chegamos a
+            esse número? O índice de massa corporal de um adulto é o seu peso em
+            quilos (por exemplo, 80 kg), dividido por sua altura ao quadrado
+            (vamos imaginar, 1,80 m x 1,80 m).
+          </p>
+          <p>
+            Que bom que você está com o peso normal! E o melhor jeito de
+            continuar assim é mantendo um estilo de vida ativo e uma alimentação
+            equilibrada.
+          </p>
+        </article>
+      </div>
+    </section>
+    <a
+      href="https://abeso.org.br/obesidade-e-sindrome-metabolica/calculadora-imc/"
+      >https://abeso.org.br/obesidade-e-sindrome-metabolica/calculadora-imc/</a
+    ><br />
+    <a
+      href="https://interativos.ge.globo.com/eu-atleta/especial/calculadora-de-imc"
+      >https://interativos.ge.globo.com/eu-atleta/especial/calculadora-de-imc</a
+    ><br />
+    <a
+      href="https://www.who.int/europe/news-room/fact-sheets/item/a-healthy-lifestyle---who-recommendations"
+      >https://www.who.int/europe/news-room/fact-sheets/item/a-healthy-lifestyle---who-recommendations</a
+    >
+
+    <script src="imc.js"></script>
+  </body>
+</html>

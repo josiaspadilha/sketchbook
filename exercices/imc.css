@@ -1,0 +1,289 @@
+/* RESET E REGRAS GERAIS */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #343a40;
+  --secondary-color: #adb5bd;
+  --accent-color: #e9c46a;
+  --border: 1px solid var(--secondary-color);
+  --border-radius: 0.2rem;
+}
+
+body {
+  font-size: 1.1rem;
+  font-family: 'Ubuntu', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  background-color: #e9ecef;
+}
+
+h2 {
+  margin-bottom: 2rem;
+}
+
+.container {
+  height: auto;
+  width: 50rem;
+  background-color: #fff;
+  padding: 3rem;
+  margin: 3rem auto;
+}
+
+.container-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: start;
+  align-items: start;
+  gap: 1rem 1.5rem;
+}
+
+.container-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* FORMULÁRIO */
+
+/* --- Inserção de dados --- */
+.form-input {
+  color: var(--accent-color);
+  font-size: inherit;
+  font-weight: 600;
+  height: 3rem;
+  width: 100%;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: 0.8rem;
+  display: block;
+}
+
+.form-input:focus {
+  outline: none;
+}
+
+.input-container > label {
+  color: var(--secondary-color);
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 0.8rem;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+.form-input:focus ~ label,
+.form-input:not(:placeholder-shown) ~ label,
+legend {
+  font-size: 0.8rem;
+  color: var(--secondary-color);
+  background-color: #fff;
+  padding: 0 0.2rem;
+  top: 0%;
+}
+
+/* --- Toggle button --- */
+fieldset {
+  height: 3rem;
+  padding: 0.8rem;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+legend {
+  position: absolute;
+  left: 0.8rem;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+fieldset > div {
+  height: 2rem;
+  width: 4rem;
+  border: var(--border);
+  border-radius: 2rem;
+  position: relative;
+}
+
+fieldset > label {
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+input[type='checkbox'] {
+  appearance: none;
+  height: 2rem;
+  width: 2rem;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+input[type='checkbox']:checked {
+  left: calc(100% - 2rem);
+}
+
+/* --- Botões `submit` e `reset` --- */
+.btn-container {
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  font-size: inherit;
+  font-weight: 600;
+  height: 3rem;
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.7rem 1.5rem;
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+button[type='submit'] {
+  background-color: var(--accent-color);
+}
+
+button[type='submit']:hover {
+  background-color: var(--secondary-color);
+}
+
+button[type='reset'] {
+  background-color: var(--secondary-color);
+}
+
+button[type='reset']:hover {
+  background-color: #e9ecef;
+}
+
+/* --- Posicionamento dos elementos no grid --- */
+.input-container {
+  position: relative;
+  grid-column: 1 / 2;
+}
+
+.age-input,
+.checkbox-group,
+.btn-container {
+  grid-column: 2 / 3;
+}
+
+.age-input {
+  grid-row: 1;
+}
+
+.biotype-container {
+  grid-row: 2;
+}
+
+.btn-container {
+  grid-row: 3;
+}
+
+/* PAINEL DE RESULTADO DO IMC */
+
+/* --- Representação gráfica do resultado --- */
+.gauge-container {
+  height: 10rem;
+  width: 20rem;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #000;
+}
+
+.gauge {
+  height: 20rem;
+  width: 20rem;
+  border-radius: 50%;
+  justify-self: center;
+  background: radial-gradient(
+      circle,
+      #000 5%,
+      #fff 5.5%,
+      #fff 40%,
+      #ffffff00 40.5%
+    ),
+    conic-gradient(
+      from 0deg,
+      #f4a261 0deg 22.5deg,
+      #e9c46a 23deg 30.93deg,
+      #2a9d8f 31.43deg 67.5deg,
+      #e9c46a 68deg 95.62deg,
+      #f4a261 96.12deg 123.75deg,
+      #e76f51 124.25deg 151.87deg,
+      #bc4749 152.37deg 180deg,
+      #e76f51 180deg 211.23deg,
+      #f4a261 224.61deg,
+      #e9c46a 240.97deg,
+      #2a9d8f 258.81deg,
+      #e9c46a 278.14deg,
+      #f4a261 303.42deg,
+      #e76f51 331.67deg
+    );
+  transform: rotate(-90deg);
+}
+
+#needle {
+  height: 1px;
+  width: 8rem;
+  border: 2px solid #000;
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform-origin: right;
+  transform: translate(-100%, 0) rotate(0deg);
+  transition: transform 1s ease-out;
+}
+
+#needle::before {
+  content: '';
+  border-top: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid transparent;
+  border-right: 1rem solid #000;
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+}
+
+/* --- Legenda do resultado --- */
+.results-summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  align-self: center;
+}
+
+.result-info {
+  font-size: 2.074rem;
+}
+
+#classification {
+  font-weight: 600;
+  color: #2a9d8f;
+  text-transform: uppercase;
+}
+
+/* --- Mais explicações sobre o resultado --- */
+.results-details {
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin-top: 1rem;
+  grid-column: span 2;
+}

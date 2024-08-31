@@ -1,0 +1,129 @@
+/* RESET E ESTILIZAÇÃO GERAL */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+}
+
+body {
+  color: #bdc4cc;
+  font-size: 0.9rem;
+  font-family: sans-serif;
+  /* fallback for old browsers */
+  background: #0e1522;
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to left, #0e1522, #19293b, #0e1522);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to left, #0e1522, #19293b, #0e1522);
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+}
+
+body,
+section,
+.work-area,
+.container,
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  height: 100vh;
+}
+
+.work-area {
+  height: 60vh;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.container {
+  height: 400px;
+  width: 50%;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 12px 36px 0 #00000070;
+}
+
+article {
+  width: 50%;
+  padding: 2rem;
+  border: 1.5px solid #243b55;
+  border-radius: 0.5rem;
+}
+
+h2 {
+  align-self: flex-start;
+  margin-bottom: 1rem;
+}
+
+/* BOTÃO DE VOLTAR À PAGINA "EXERCÍCIOS" */
+.icons {
+  fill: #243b55;
+}
+
+.icons:hover {
+  fill: #bdc4cc;
+}
+
+.return-icon {
+  height: 24px;
+  width: 24px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 24px 0 #00000050;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* MENU DE NAVEGAÇÃO LATERAL - PAGINATION */
+.pagination-controls {
+  position: fixed;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.pagination-controls,
+.pagination-pages {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pages {
+  height: 12px;
+  width: 12px;
+  border: 1.5px solid #243b55;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.pages:hover {
+  border: 1.5px solid #bdc4cc;
+}
+
+.current-page {
+  background-color: #243b55;
+}
+
+/* EXERCÍCIOS */

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>UnoBank - Você no controle do seu futuro</title>
+  </head>
+  <body>
+    <header>
+      <div id="unobank-logo">
+        <img id="img-logo" src="./logo.png" alt="Logo da UnoBank" />
+        <h1>Uno<b>Bank</b></h1>
+      </div>
+      <a id="btn-return" href="../projetos.html">Voltar</a>
+    </header>
+    <main id="hero-section">
+      <img
+        id="img-hero"
+        src="./woman-checking-bank-account-while-using-smartphone.jpg"
+        alt="Mulher sorrindo ao celular"
+      />
+      <section class="form-section">
+        <div id="form-container">
+          <h2>Preencha os campos abaixo e peça já o seu cartão sem anuidade</h2>
+          <form id="form">
+            <div class="input-container">
+              <input
+                id="cpf"
+                class="form-input"
+                type="number"
+                required
+                placeholder
+              />
+              <label class="floating-label" for="cpf">CPF</label>
+              <p class="form-validation">Este CPF não é válido</p>
+            </div>
+            <div class="input-container">
+              <input
+                id="full-name"
+                class="form-input"
+                type="text"
+                required
+                placeholder
+              />
+              <label class="floating-label" for="full-name"
+                >Nome completo</label
+              >
+              <p id="invalid-full-name" class="form-validation">
+                Precisamos do seu nome completo
+              </p>
+            </div>
+            <div class="input-container">
+              <input
+                id="fone"
+                class="form-input"
+                type="tel"
+                required
+                placeholder
+              />
+              <label class="floating-label" for="fone">Celular</label>
+              <p id="invalid-fone" class="form-validation">
+                Precisamos de um número de celular com DDD válido
+              </p>
+            </div>
+            <div class="input-container">
+              <input
+                id="email"
+                class="form-input"
+                type="email"
+                required
+                placeholder
+              />
+              <label class="floating-label" for="email">E-mail</label>
+              <p class="form-validation">Precisamos de um e-mail válido</p>
+            </div>
+            <div class="input-container">
+              <input
+                id="email-confirm"
+                class="form-input"
+                type="email"
+                required
+                placeholder
+              />
+              <label class="floating-label" for="email-confirm"
+                >Confirmação do e-mail</label
+              >
+              <p id="invalid-email" class="form-validation">
+                Os endereços de e-mail não são iguais
+              </p>
+            </div>
+            <div class="input-container">
+              <div id="agreement-container">
+                <input
+                  id="agreement"
+                  class="agreement"
+                  type="checkbox"
+                  required
+                />
+                <label for="agreement" class="agreement"
+                  >Eu li, estou ciente das condições de tratamento dos meus
+                  dados pessoais e dou meu consentimento, conforme descrito
+                  nesta
+                  <a href="#">Política de Privacidade</a>
+                </label>
+              </div>
+            </div>
+            <button class="input btn-submit" type="submit">Enviar</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p class="footer-general-info">
+        * Os produtos mencionados estão sujeitos à aprovação de crédito e
+        cadastro e podem ser contratados de maneira independente.
+      </p>
+      <div class="ruler"></div>
+      <div class="footer-nav">
+        <nav class="nav-container">
+          <h3>Nossos produtos</h3>
+          <ul>
+            <li><a class="nav-links" href="#">Conta corrente</a></li>
+            <li><a class="nav-links" href="#">Cartão de crédito</a></li>
+            <li><a class="nav-links" href="#">Seguros</a></li>
+            <li><a class="nav-links" href="#">Investimentos</a></li>
+            <li><a class="nav-links" href="#">Renegociação</a></li>
+          </ul>
+        </nav>
+        <nav class="nav-container">
+          <h3>Ajuda</h3>
+          <ul>
+            <li><a class="nav-links" href="#">Central de ajuda</a></li>
+            <li><a class="nav-links" href="#">Perguntas frequentes</a></li>
+            <li><a class="nav-links" href="#">Canais UnoBank</a></li>
+            <li><a class="nav-links" href="#">Segurança</a></li>
+          </ul>
+        </nav>
+        <nav class="nav-container">
+          <h3>Confira também</h3>
+          <ul>
+            <li><a class="nav-links" href="#">Para pessoa física</a></li>
+            <li><a class="nav-links" href="#">Para pessoa jurídica</a></li>
+            <li>
+              <a class="nav-links" href="./chatgpt.html">Pacotes e tarifas</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="media-app-container">
+          <nav class="nav-container">
+            <h3>Siga nas redes sociais</h3>
+            <ul class="nav-social-media">
+              <li>
+                <a
+                  href="https://www.instagram.com/accounts/login/"
+                  target="_blank"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="#cccccc"
+                    viewBox="0 0 256 256"
+                  >
+                    <path
+                      d="M128,82a46,46,0,1,0,46,46A46.06,46.06,0,0,0,128,82Zm0,80a34,34,0,1,1,34-34A34,34,0,0,1,128,162ZM176,26H80A54.06,54.06,0,0,0,26,80v96a54.06,54.06,0,0,0,54,54h96a54.06,54.06,0,0,0,54-54V80A54.06,54.06,0,0,0,176,26Zm42,150a42,42,0,0,1-42,42H80a42,42,0,0,1-42-42V80A42,42,0,0,1,80,38h96a42,42,0,0,1,42,42ZM190,76a10,10,0,1,1-10-10A10,10,0,0,1,190,76Z"
+                    ></path>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/?locale=pt_BR"
+                  target="_blank"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="#cccccc"
+                    viewBox="0 0 256 256"
+                  >
+                    <path
+                      d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm6,191.8V150h26a6,6,0,0,0,0-12H134V112a18,18,0,0,1,18-18h16a6,6,0,0,0,0-12H152a30,30,0,0,0-30,30v26H96a6,6,0,0,0,0,12h26v67.8a90,90,0,1,1,12,0Z"
+                    ></path>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/?lang=pt-br" target="_blank">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="#cccccc"
+                    viewBox="0 0 256 256"
+                  >
+                    <path
+                      d="M213.06,212.78l-63.42-99.66L212.44,44A6,6,0,1,0,203.56,36L143,102.62l-41.9-65.84A6,6,0,0,0,96,34H48a6,6,0,0,0-5.06,9.22l63.42,99.66L43.56,212A6,6,0,0,0,52.44,220L113,153.38l41.9,65.84A6,6,0,0,0,160,222h48a6,6,0,0,0,5.06-9.22ZM163.29,210,58.93,46H92.71L197.07,210Z"
+                    ></path>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/?lang=pt-br" target="_blank">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="#cccccc"
+                    viewBox="0 0 256 256"
+                  >
+                    <path
+                      d="M163.33,123l-48-32A6,6,0,0,0,106,96v64a6,6,0,0,0,9.33,5l48-32a6,6,0,0,0,0-10ZM118,148.79V107.21L149.18,128ZM232.4,70a22,22,0,0,0-13.28-15C185,41.79,130.27,42,128,42s-57-.21-91.16,13A22,22,0,0,0,23.6,70C21.05,79.89,18,98,18,128s3.05,48.11,5.6,58a22,22,0,0,0,13.28,15C71,214.21,125.72,214,128,214h.71c6.91,0,58-.44,90.45-13a22,22,0,0,0,13.28-15c2.55-9.87,5.6-27.93,5.6-58S235,79.89,232.4,70ZM220.78,183a10,10,0,0,1-6,6.86C182.78,202.19,128.58,202,128,202s-54.71.2-86.75-12.17a10,10,0,0,1-6-6.86C32.84,173.78,30,156.78,30,128s2.84-45.78,5.22-55a10,10,0,0,1,6-6.86C72.06,54.26,123.53,54,127.76,54H128c.54,0,54.71-.2,86.75,12.17a10,10,0,0,1,6,6.86c2.38,9.19,5.22,26.19,5.22,55S223.16,173.78,220.78,183Z"
+                    ></path>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="nav-container">
+            <h3>Baixe o app</h3>
+            <ul>
+              <li>
+                <a href="https://www.apple.com/br/" target="_blank">
+                  <img src="./webimage-app_store_footer_cmsless.avif" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="https://play.google.com/store/apps" target="_blank">
+                  <img
+                    src="./webimage-google_play_footer_cmsless.webp"
+                    alt=""
+                  />
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="ruler"></div>
+      <div class="address-copyright">
+        <p class="footer-general-info">
+          &copy; 2024 UnoBank S.A., 10.000.222/0001-00
+        </p>
+        <address class="footer-general-info">
+          Avenida da Inovação, 1234 - Bairro da Modernidade, São Paulo - SP,
+          01234-567
+        </address>
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>

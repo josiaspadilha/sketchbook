@@ -1,0 +1,371 @@
+@font-face {
+  font-family: 'hartingplain';
+  src: url('./fonts/Harting_plain-webfont.eot');
+  src: url('./fonts/Harting_plain-webfont.eot?#iefix')
+      format('embedded-opentype'),
+    url('./fonts/specimen_files/') format('woff2'),
+    url('./fonts/Harting_plain-webfont.woff') format('woff'),
+    url('./fonts/Harting_plain-webfont.ttf') format('truetype'),
+    url('./fonts/Harting_plain-webfont.svg#hartingplain') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ESTILIZAÇÃO GERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier Prime', monospace, sans-serif;
+  line-height: 1.5;
+}
+
+h1,
+footer,
+.subpages {
+  font-family: 'hartingplain', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+footer {
+  font-size: 0.8rem;
+  text-align: center;
+  line-height: 2rem;
+  color: #eee;
+  background-color: #1a1b20;
+  width: 100%;
+}
+
+.quotes {
+  font-size: 0.8rem;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+}
+
+.quotes a {
+  color: #1a1b20;
+}
+
+.quotes a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.viewport-height {
+  height: 100vh;
+}
+
+.background-img {
+  color: #1a1b20;
+  background-image: url(../img/crumpled-paper.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* HOMEPAGE */
+.homepage {
+  height: 94%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.homepage-container {
+  border: 2px solid #1a1b20;
+  border-radius: 4px;
+  height: inherit;
+  width: inherit;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.subpages-link {
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: #eeeeeeaf;
+  border: 2px solid #1a1b20;
+  border-radius: 24px;
+  padding: 16px 32px;
+  display: inline-block;
+  transition: transform 0.2s ease, padding 0.2s ease;
+}
+
+.subpages-link:link,
+.subpages-link:visited {
+  color: #1a1b20;
+}
+
+.subpages-link:hover {
+  color: #1a1b20;
+  background-color: #eee;
+}
+
+.subpages-link:active {
+  transform: scale(0.97);
+  padding: 14px 30px;
+}
+
+/* PÁGINAS INTERNAS */
+.heading-secondary-pages {
+  height: 15rem;
+  margin-top: 4rem;
+  border-bottom: 2px solid #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2.986rem;
+  text-transform: uppercase;
+}
+
+/* Barra de navegação para outras páginas */
+.nav-wrapper {
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 2px solid #eee;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-bar-main {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link-external {
+  display: inline-block;
+  line-height: 4rem;
+  height: 4rem;
+  padding: 0 1rem;
+}
+
+.link-external:link,
+.link-external:visited {
+  color: #1a1b20;
+}
+
+.link-external:hover,
+.link-external:active {
+  font-weight: 400;
+  color: #eee;
+  background-color: #1a1b20;
+}
+
+.current-page {
+  font-weight: 400;
+  color: #1a1b20;
+  background-color: #eee;
+}
+
+.return-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: #1a1b20;
+  border: 1.5px solid #1a1b20;
+  border-radius: 24px;
+}
+
+.return-home:hover {
+  background-color: #fff;
+}
+
+.return-home:hover .home-icon {
+  fill: #1a1b20;
+}
+
+/* Barra de navegação interna */
+/* .bar-scroll-wrapper {
+  position: sticky;
+  top: 4rem;
+  z-index: 100;
+} */
+
+.nav-bar-scroll {
+  height: 3rem;
+  gap: 0.5rem;
+}
+
+.link-internal {
+  display: inline-block;
+  line-height: 2rem;
+  height: 2rem;
+  padding: 0 1rem;
+  border: 1px solid #eee;
+  border-radius: 24px;
+}
+
+.link-internal:link,
+.link-internal:visited {
+  color: #1a1b20;
+}
+
+.link-internal:hover,
+.link-internal:active {
+  background-color: #eee;
+}
+
+/* Conteúdo da página */
+h2 {
+  font-size: 1.728rem;
+  letter-spacing: -0.1rem;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 1rem;
+  line-height: 1;
+  letter-spacing: -0.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-wrapper {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.section-wrapper:nth-last-child(even) {
+  background-color: #eee;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4rem 2rem;
+  justify-content: center;
+  align-content: center;
+  justify-items: start;
+  align-items: start;
+}
+
+figure {
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.logo-container {
+  height: 5rem;
+  width: 5rem;
+  flex-shrink: 0;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-container:hover {
+  border: 2px solid #1864ab;
+}
+
+.resources-logo {
+  max-height: 70%;
+  max-width: 70%;
+  margin: auto;
+}
+
+.resource-info {
+  font-size: 0.833rem;
+}
+
+figure a,
+figure a:link,
+figure a:visited {
+  color: #1864ab;
+}
+
+figure a:hover,
+figure a:active {
+  text-decoration: underline;
+}
+
+/* Modal pop-up da página "Exercícios" */
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: #000000aa;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+.modal {
+  height: 50%;
+  width: 50%;
+  padding: 2rem;
+  background-color: #eee;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30;
+}
+
+.close-modal {
+  font-size: 2rem;
+  height: 2rem;
+  width: 2rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.git-wrapper {
+  align-self: center;
+}
+
+.git-icon {
+  height: 2rem;
+  width: 2rem;
+}
+
+.hidden {
+  display: none;
+}

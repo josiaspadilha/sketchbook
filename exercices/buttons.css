@@ -1,0 +1,686 @@
+/* --------- RESET E ESTILIZAÇÃO GERAL ---------- */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #a1a1a1;
+  font-size: 0.9rem;
+  font-family: 'Nunito', sans-serif;
+  background-color: #e1e1e1;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+body,
+section,
+.work-area,
+.container,
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  height: 100vh;
+}
+
+.work-area {
+  height: 60vh;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.container {
+  height: 100%;
+  width: 50%;
+  border-radius: 0.5rem;
+}
+
+article {
+  width: 50%;
+  padding: 2rem;
+  border: 1px solid #a1a1a1;
+  border-radius: 0.5rem;
+}
+
+article:hover {
+  color: #363636;
+  border: 1px solid #363636;
+}
+
+h3 {
+  margin-bottom: 1rem;
+  align-self: flex-start;
+}
+
+p {
+  line-height: 1.5;
+}
+
+/* ----- BOTÃO DE VOLTAR À PAGINA ANTERIOR ----- */
+.icons {
+  box-sizing: content-box;
+  fill: #a1a1a1;
+}
+
+.icons:hover {
+  fill: #363636;
+}
+
+.return-icon {
+  height: 24px;
+  width: 24px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1.5rem;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* ----- MENU DE NAVEGAÇÃO LATERAL - PAGINATION ----- */
+.pagination-controls {
+  position: fixed;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.pagination-controls,
+.pagination-pages {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pages {
+  height: 12px;
+  width: 12px;
+  border: 1.5px solid #a1a1a1;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.pages:hover {
+  background-color: #363636;
+  border: 1.5px solid #363636;
+}
+
+.current-page {
+  background-color: #a1a1a1;
+}
+
+/* ---------- EXERCÍCIOS ---------- */
+
+/* Botão 1 */
+.btn-1 {
+  color: #4a4a4a;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 1rem 3rem;
+  background-color: #e1e1e1;
+  border: 2px solid #e1e1e1;
+  border-radius: 0.75rem;
+  box-shadow: 8px 8px 16px 4px #36363660, -8px -8px 16px 4px #ffffff;
+  overflow: hidden;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.btn-1::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 1000%;
+  background-color: #06d6a0;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0); /* Invisível */
+  transition: transform 0.3s ease-in-out;
+  z-index: 0;
+}
+
+.btn-1:hover::before {
+  transform: translate(-50%, -50%) scale(1); /* Expande o pseudo-elemento para preencher o botão */
+}
+
+.btn-1:hover {
+  color: #121212;
+  box-shadow: 16px 16px 32px 8px #36363660, -4px -4px 16px 2px #ffffff;
+  transform: scale(1.05);
+}
+
+.btn-1:active {
+  transform: scale(1);
+  transition: 0.1s;
+}
+
+.btn-1 span {
+  position: relative; /* Garante que o texto fique acima do pseudo-elemento */
+  z-index: 1; /* Garante que o texto esteja sobre o fundo do botão */
+}
+
+/* Botão 2 */
+
+/* Botão 3 */
+#section-3 {
+  background-image: linear-gradient(to top left, #121212, #2a2a2a);
+}
+
+.btn-3 {
+  color: #f9f9f9;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  padding: 1rem 3rem;
+  background: transparent;
+  border-radius: 0.4rem;
+  box-shadow: 0px 0px 60px #1f4c65;
+  box-shadow: inset;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.btn-3::before,
+.btn-3::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.5s ease;
+  z-index: -10;
+}
+
+/* Gradiente visível no estado normal */
+.btn-3::before {
+  background-image: linear-gradient(to right, #0b8793, #360033);
+  opacity: 1;
+}
+
+/* Gradiente invisível no estado normal*/
+.btn-3::after {
+  background-image: linear-gradient(to right, #360033, #b21f1f, #fdbb2d);
+  opacity: 0;
+}
+
+/* Gradiente invisível em :hover */
+.btn-3:hover::before {
+  opacity: 0;
+}
+
+/* Gradiente visível em :hover */
+.btn-3:hover::after {
+  opacity: 1;
+}
+
+.btn-3:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 60px #fdbb2d40;
+  transition: ease-in-out 0.3s;
+}
+
+.btn-3:active {
+  transform: scale(1);
+  transition: transform 0.1s;
+}
+
+/* A transição entre gradientes usando `transition: background-image` pode não ser suportada em todos os navegadores. O código acima usa `opacity`, ::before e ::after como alternativa para garantir o efeito suave */
+
+/* Botão 4 */
+.container-4 {
+  height: auto;
+  width: auto;
+  background-color: #e1e1e1;
+  border-radius: 4rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
+#checkbox {
+  appearance: none;
+}
+
+/* Background dia e noite */
+.btn-4 {
+  height: 4rem;
+  width: 10rem;
+  border-radius: 4rem;
+  background: #6dd5fa;
+  background: -webkit-linear-gradient(to top, #d8f5ff, #6dd5fa, #2980b9);
+  background: linear-gradient(to top, #d8f5ff, #6dd5fa, #2980b9);
+  box-shadow: 0 -1px 4px 3px #00000050, 0 2px 4px 4px #fff;
+  box-sizing: content-box;
+  opacity: 1;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 19;
+}
+
+.btn-4::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  background: #03001e;
+  background: -webkit-linear-gradient(to top, #302b63, #03001e);
+  background: linear-gradient(to top, #302b63, #03001e);
+  z-index: -20;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.toggle-btn {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  background-color: #fdbb2d;
+  position: absolute;
+  transform: translate(0, 0);
+  cursor: pointer;
+  z-index: 20;
+  transition: transform 0.4s ease-in-out;
+  animation: sunLight 4s infinite;
+}
+
+.toggle-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #06d6a0;
+  z-index: 22;
+}
+
+@keyframes sunLight {
+  0% {
+    box-shadow: 0 0 2px 12px #fed681aa, -12px 0 8px 2px #fed681 inset,
+      12px -12px 8px 2px #e4a829 inset;
+  }
+  50% {
+    box-shadow: 0 0 2px 24px #fed68130, -12px 0 8px 2px #fed681 inset,
+      12px -12px 8px 2px #e4a829 inset;
+  }
+  100% {
+    box-shadow: 0 0 2px 12px #fed681aa, -12px 0 8px 2px #fed681 inset,
+      12px -12px 8px 2px #e4a829 inset;
+  }
+}
+
+/* Condição para alternância */
+#checkbox:checked + .btn-4::before {
+  opacity: 1;
+}
+
+#checkbox:checked + .btn-4 .toggle-btn {
+  transform: translate(150%, 0);
+  background-color: #e1e1e1;
+  animation: moonLight 1s infinite;
+}
+
+@keyframes moonLight {
+  0% {
+    box-shadow: 0 0 8px 4px #ffffffaa, -12px -12px 8px 2px #cbcbcb inset,
+      12px 0 8px 2px #ffffff inset;
+  }
+  100% {
+    box-shadow: 0 0 8px 4px #ffffffaa, -12px -12px 8px 2px #cbcbcb inset,
+      12px 0 8px 2px #ffffff inset;
+  }
+}
+
+/* Botão 5 */
+#section-5 {
+  background-color: #111;
+}
+
+.container-5 {
+  height: auto;
+  width: auto;
+  position: relative;
+}
+
+/* Botão apagado */
+.btn-5 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-family: 'Raleway', sans-serif;
+  color: #2a2a2a;
+  padding: 1.2rem 3rem;
+  background-color: #111;
+  border: 0.3rem solid #2a2a2a;
+  border-radius: 6rem;
+  box-shadow: -1px -1px 4px 0 #a1a1a120 inset;
+  position: relative;
+  z-index: 30;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+/* Botão iluminado quando tiver :hover */
+.btn-5::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  height: 200%;
+  width: 200%;
+  opacity: 0;
+  z-index: -30;
+  background: radial-gradient(circle at top left, #ffdf40 10%, transparent 50%),
+    radial-gradient(circle at top right, #6ec8ff 10%, transparent 50%),
+    radial-gradient(circle at bottom left, #c471ed 10%, transparent 50%),
+    radial-gradient(circle at bottom right, #5bff9d 10%, transparent 50%),
+    linear-gradient(45deg, #ffd35b, #ff3916);
+  background-size: 200% 200%, 100% 100%, 200% 200%, 200% 200%, 100% 100%;
+  background-position: 0% 0%, 100% 100%, 0% 0%, 0% 0%, 100% 100%;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  animation: gradient 5s ease infinite;
+}
+
+/* Animação */
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%, 100% 100%, 0% 0%, 100% 100%, 0% 0%;
+  }
+  33% {
+    background-position: 100% 0%, 0% 100%, 100% 0%, 0% 100%, 100% 0%;
+  }
+  66% {
+    background-position: 0% 100%, 100% 0%, 0% 100%, 100% 0%, 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%, 100% 100%, 0% 0%, 100% 100%, 0% 0%;
+  }
+}
+
+.btn-5:hover {
+  border: 0.3rem solid #fff;
+  transform: scale(1.03);
+  box-shadow: 0 0 8rem 0rem #ffe8aa70;
+
+  color: #fff;
+}
+
+.btn-5:hover::before {
+  opacity: 1;
+}
+
+.btn-5:active {
+  transform: scale(1);
+}
+
+/* Botão 6 */
+.container-6,
+.btn-6 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.btn-6 {
+  height: 5rem;
+  width: 5rem;
+  background-color: #e1e1e1;
+  border-radius: 2rem;
+  box-shadow: 0 8px 12px 0 #00000040, 0 -8px 6px 0 #00000030 inset,
+    0 8px 6px 4px #fff inset;
+}
+
+@keyframes buttonAnimation {
+  0% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.1);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+}
+
+.btn-6:hover {
+  animation: buttonAnimation 1.2s ease 1;
+}
+
+.heart-icon,
+.gear-icon,
+.like-icon {
+  height: 36px;
+  width: 36px;
+  filter: drop-shadow(0 2px 4px #00000080);
+}
+
+.heart-icon {
+  fill: #db5461;
+}
+
+@keyframes beatingHeart {
+  0% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.2);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.2);
+  }
+
+  75% {
+    transform: scale(1);
+  }
+}
+
+.btn-6--heart:hover .heart-icon {
+  animation: beatingHeart 1.2s infinite;
+}
+
+.like-icon {
+  fill: #3083dc;
+}
+
+@keyframes thumbsUp {
+  0% {
+    transform: rotate(10deg) translateX(-0.3rem) scale(0.9);
+  }
+  5% {
+    transform: rotate(0) translateX(0) scale(1);
+  }
+  15% {
+    transform: rotate(-30deg) translateX(1rem) scale(1.2);
+  }
+  40% {
+    transform: rotate(0) translateX(0) scale(1);
+  }
+}
+
+.btn-6--like:hover .like-icon {
+  animation: thumbsUp 1.8s ease infinite;
+}
+
+.gear-icon {
+  fill: #383d3b;
+}
+
+@keyframes spinningGear {
+  0% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(360deg) scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn-6--gear:hover .gear-icon {
+  animation: spinningGear 2s ease infinite;
+}
+
+/* Botão 7 */
+
+/* Botão 8 */
+.container-8 {
+  width: 20rem;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* Ícones redes sociais */
+.btn-8 {
+  height: 3rem;
+  width: 3rem;
+  color: #4d4d4d;
+  border: 2px solid #4d4d4d;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  position: relative;
+  transition: all 0.6s ease;
+}
+
+.sm-youtube:hover,
+.sm-instagram:hover,
+.sm-x:hover,
+.sm-facebook:hover {
+  color: #fff;
+}
+
+.sm-youtube:hover {
+  background-color: #ff0000;
+  border: #ff0000;
+}
+
+.sm-instagram:hover {
+  background: radial-gradient(
+    circle at bottom left,
+    #fdcb58 20%,
+    #fd1d1d 40%,
+    #e1306c 70%,
+    #833ab4 80%
+  );
+  border: none;
+}
+
+.sm-x:hover {
+  background-color: #000;
+  border: #000;
+}
+
+.sm-facebook:hover {
+  background-color: #1877f2;
+  border: #1877f2;
+}
+
+/* Tooltip */
+.ttip {
+  color: #fff;
+  height: 2rem;
+  width: 4.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  bottom: 120%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease, bottom 0.6s ease;
+  opacity: 0;
+}
+
+.ttip-youtube {
+  background-color: #ff0000;
+}
+
+.ttip-instagram {
+  background: radial-gradient(
+    ellipse at bottom left,
+    #833ab4 10%,
+    #e1306c 40%,
+    #fd1d1d 60%,
+    #fdcb58 95%
+  );
+}
+
+.ttip-x {
+  background-color: #000;
+}
+
+.ttip-facebook {
+  background-color: #1877f2;
+}
+
+/* Animações */
+@keyframes showUp {
+  0% {
+    bottom: 100%;
+    opacity: 0;
+  }
+  100% {
+    bottom: 90%;
+    opacity: 1;
+  }
+}
+
+.sm-youtube:hover .ttip-youtube,
+.sm-instagram:hover .ttip-instagram,
+.sm-x:hover .ttip-x,
+.sm-facebook:hover .ttip-facebook {
+  animation: showUp 0.6s forwards;
+  opacity: 1;
+  bottom: 100%;
+}
+
+/* Botão 9 */
+
+/* Botão 10 */
