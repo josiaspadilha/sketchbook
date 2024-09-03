@@ -16,53 +16,64 @@
     <title>Calculadora de IMC</title>
   </head>
   <body>
+    <header>
+      <h1>
+        <span class="h-smaller">Descubra seu</span>
+        <span class="h-bigger">IMC</span>
+      </h1>
+    </header>
     <section class="container">
       <h2>Coloque seus dados</h2>
       <form class="calc-form container-grid">
-        <div class="input-container">
+        <div class="input-container height-wrapper">
           <input
             class="form-input"
             id="height"
             type="number"
             step="1"
+            min="1"
             placeholder
             required
           />
           <label for="height">Altura (cm)</label>
         </div>
-        <div class="input-container">
+        <div class="input-container weight-wrapper">
           <input
             class="form-input"
             id="weight"
             type="number"
             step="0.1"
+            min="1"
             placeholder
             required
           />
           <label for="weight">Peso (kg)</label>
         </div>
-        <div class="input-container">
+        <div class="input-container abdomen-wrapper">
           <input
             class="form-input"
             id="abdomen"
             type="number"
             step="0.1"
+            min="1"
             placeholder
             required
           />
-          <label for="abdomen">Circunferência abdominal (cm)</label>
+          <label for="abdomen">Circ. abdominal (cm)</label>
         </div>
-        <div class="input-container age-input">
+        <div class="input-container age-wrapper">
           <input
             class="form-input"
             id="age"
             type="number"
+            step="1"
+            min="5"
             placeholder
             required
           />
-          <label for="age">Idade (anos)</label>
+          <label for="age">Idade (a partir de 5 anos)</label>
         </div>
-        <div class="checkbox-group biotype-container">
+        <div class="biotype-wrapper">
           <fieldset>
             <legend>Biotipo</legend>
             <label for="biotype">Masculino</label>
@@ -72,37 +83,32 @@
             <label for="biotype">Feminino</label>
           </fieldset>
         </div>
-        <div class="btn-container">
-          <button type="submit">Calcular</button>
-          <button type="reset">Limpar</button>
-        </div>
+        <button class="hover-lift" type="submit">Calcular</button>
+        <button class="hover-lift" type="reset">Reiniciar</button>
       </form>
     </section>
     <section class="container">
+      <h2>Resultado</h2>
       <div class="container-grid">
-        <figure class="gauge-container">
-          <div class="gauge"></div>
+        <figure class="dial-container">
+          <div class="dial"></div>
           <div id="needle"></div>
         </figure>
-        <div class="results-summary">
-          <h3 id="age-rate">Estatísticas para um homem adulto</h3>
-          <p id="imc-result" class="result-info">IMC igual a 20.2</p>
-          <p id="classification" class="result-info">Peso Desejável</p>
+        <p id="imc-result" class="hover-lift imc-wrapper"></p>
+        <p id="classification" class="hover-lift classification-wrapper"></p>
+        </section>
+        <section class="container">
+          <h3>Entenda o resultado</h3>
+          <div class="container-grid">
+          <p class="large-paragraph">
+            O IMC é um dos parâmetros utilizados para avaliar o estado nutricional e o risco de
+            mortalidade em adultos. Para
+            crianças e adolescentes de até 19 anos, o indicador mais utilizado é
+            o escore Z do IMC, que ajusta o IMC conforme a idade e o sexo para
+            fornecer uma avaliação mais precisa do estado nutricional durante o
+            crescimento.
+          </p>
         </div>
-        <article class="results-details">
-          <p>
-            O IMC é uma das ferramentas para avaliar o estado nutricional e o
-            risco de mortalidade, junto a outros parâmetros. Como chegamos a
-            esse número? O índice de massa corporal de um adulto é o seu peso em
-            quilos (por exemplo, 80 kg), dividido por sua altura ao quadrado
-            (vamos imaginar, 1,80 m x 1,80 m).
-          </p>
-          <p>
-            Que bom que você está com o peso normal! E o melhor jeito de
-            continuar assim é mantendo um estilo de vida ativo e uma alimentação
-            equilibrada.
-          </p>
-        </article>
       </div>
     </section>
     <a

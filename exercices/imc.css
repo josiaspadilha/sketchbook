@@ -6,39 +6,57 @@
 }
 
 :root {
-  --primary-color: #343a40;
-  --secondary-color: #adb5bd;
-  --accent-color: #e9c46a;
+  --primary-color: #212529;
+  --secondary-color: #6c757d;
+  --accent-color: #5f27cd;
+  --error-color: #ee5253;
+  --green: #10ac84;
+  --yellow: #feca57;
+  --orange: #ff9f43;
+  --light-red: #ff6b6b;
+  --dark-red: #ee5253;
+  --background-lighter: #f8f9fa;
+  --background-light: #e9ecef;
   --border: 1px solid var(--secondary-color);
-  --border-radius: 0.2rem;
+  --border-radius: 1rem;
 }
 
 body {
+  color: var(--primary-color);
   font-size: 1.1rem;
   font-family: 'Ubuntu', sans-serif;
-  height: 100vh;
-  width: 100vw;
-  background-color: #e9ecef;
+  width: 100%;
+  /* background-color: var(--background-white); */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 h2 {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+}
+
+h3 {
+  margin-bottom: 1.5rem;
 }
 
 .container {
   height: auto;
-  width: 50rem;
-  background-color: #fff;
-  padding: 3rem;
-  margin: 3rem auto;
+  width: 60rem;
+  background-color: var(--background-lighter);
+  border-radius: var(--border-radius);
+  padding: 3rem 6rem;
+  margin: auto;
 }
 
 .container-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   justify-content: start;
   align-items: start;
-  gap: 1rem 1.5rem;
+  gap: 1rem;
 }
 
 .container-flex {
@@ -49,6 +67,41 @@ h2 {
   gap: 1rem;
 }
 
+/* Card se move para cima em hover */
+.hover-lift {
+  transition: all 0.3s ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-0.75rem);
+}
+
+/* H1 */
+header {
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.h-smaller,
+.h-bigger {
+  text-align: center;
+  line-height: 0.9;
+
+  display: block;
+}
+
+.h-smaller {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.h-bigger {
+  font-size: 8rem;
+  letter-spacing: -0.6rem;
+}
+
 /* FORMULÁRIO */
 
 /* --- Inserção de dados --- */
@@ -56,16 +109,12 @@ h2 {
   color: var(--accent-color);
   font-size: inherit;
   font-weight: 600;
-  height: 3rem;
+  height: 3.5rem;
   width: 100%;
   border: var(--border);
   border-radius: var(--border-radius);
   padding: 0.8rem;
   display: block;
-}
-
-.form-input:focus {
-  outline: none;
 }
 
 .input-container > label {
@@ -83,14 +132,18 @@ h2 {
 legend {
   font-size: 0.8rem;
   color: var(--secondary-color);
-  background-color: #fff;
+  background-color: var(--background-lighter);
   padding: 0 0.2rem;
   top: 0%;
 }
 
+input {
+  background-color: inherit;
+}
+
 /* --- Toggle button --- */
 fieldset {
-  height: 3rem;
+  height: 3.5rem;
   padding: 0.8rem;
   border: var(--border);
   border-radius: var(--border-radius);
@@ -147,50 +200,54 @@ input[type='checkbox']:checked {
 button {
   font-size: inherit;
   font-weight: 600;
-  height: 3rem;
+  color: #fff;
+  height: 3.5rem;
   border: none;
-  border-radius: 0.2rem;
+  border-radius: var(--border-radius);
   padding: 0.7rem 1.5rem;
   flex-grow: 1;
   cursor: pointer;
 }
 
 button[type='submit'] {
-  background-color: var(--accent-color);
-}
-
-button[type='submit']:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
+  grid-column: 3;
 }
 
 button[type='reset'] {
   background-color: var(--secondary-color);
+  grid-column: 4;
 }
 
+/* button[type='submit']:hover,
 button[type='reset']:hover {
-  background-color: #e9ecef;
-}
+  background-color: var(--secondary-color);
+} */
 
 /* --- Posicionamento dos elementos no grid --- */
-.input-container {
+.height-wrapper,
+.weight-wrapper,
+.abdomen-wrapper {
   position: relative;
-  grid-column: 1 / 2;
+  grid-column: 1 / 3;
 }
 
-.age-input,
-.checkbox-group,
-.btn-container {
-  grid-column: 2 / 3;
+.age-wrapper,
+.biotype-wrapper {
+  position: relative;
+  grid-column: 3 / 5;
 }
 
-.age-input {
+.height-wrapper,
+.age-wrapper {
   grid-row: 1;
 }
 
-.biotype-container {
+.weight-wrapper,
+.biotype-wrapper {
   grid-row: 2;
 }
-
+.abdomen-wrapper,
 .btn-container {
   grid-row: 3;
 }
@@ -198,92 +255,98 @@ button[type='reset']:hover {
 /* PAINEL DE RESULTADO DO IMC */
 
 /* --- Representação gráfica do resultado --- */
-.gauge-container {
+.dial-container {
   height: 10rem;
   width: 20rem;
+  margin: auto;
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid #000;
+  grid-column: 3 / 5;
 }
 
-.gauge {
+.dial {
   height: 20rem;
   width: 20rem;
   border-radius: 50%;
   justify-self: center;
   background: radial-gradient(
       circle,
-      #000 5%,
-      #fff 5.5%,
-      #fff 40%,
-      #ffffff00 40.5%
+      var(--primary-color) 10%,
+      #fff 10.5%,
+      #fff 35%,
+      #ffffff00 35.5%
     ),
     conic-gradient(
       from 0deg,
-      #f4a261 0deg 22.5deg,
-      #e9c46a 23deg 30.93deg,
-      #2a9d8f 31.43deg 67.5deg,
-      #e9c46a 68deg 95.62deg,
-      #f4a261 96.12deg 123.75deg,
-      #e76f51 124.25deg 151.87deg,
-      #bc4749 152.37deg 180deg,
-      #e76f51 180deg 211.23deg,
-      #f4a261 224.61deg,
-      #e9c46a 240.97deg,
-      #2a9d8f 258.81deg,
-      #e9c46a 278.14deg,
-      #f4a261 303.42deg,
-      #e76f51 331.67deg
+      var(--orange) 0deg 24deg,
+      var(--yellow) 24.5deg 32.5deg,
+      var(--green) 33deg 68deg,
+      var(--yellow) 68.5deg 95deg,
+      var(--orange) 95.5deg 122deg,
+      var(--light-red) 122.5deg 149.5deg,
+      var(--dark-red) 150deg 180deg,
+      var(--light-red) 180deg 202.5deg,
+      var(--yellow) 203deg 226.5deg,
+      var(--green) 227deg 291.5deg,
+      var(--yellow) 292deg 313deg,
+      var(--light-red) 313.5deg 360deg
     );
   transform: rotate(-90deg);
+  transition: all 0.6s ease;
 }
 
 #needle {
-  height: 1px;
-  width: 8rem;
-  border: 2px solid #000;
+  border-top: 0.4rem solid transparent;
+  border-bottom: 0.4rem solid transparent;
+  border-right: 8rem solid var(--primary-color);
   position: absolute;
   bottom: -2px;
   left: 50%;
   transform-origin: right;
   transform: translate(-100%, 0) rotate(0deg);
-  transition: transform 1s ease-out;
+  transition: all 1s ease;
 }
 
-#needle::before {
+/* #needle::before {
   content: '';
   border-top: 0.5rem solid transparent;
   border-bottom: 0.5rem solid transparent;
-  border-right: 1rem solid #000;
+  border-right: 1rem solid var(--primary-color);
   position: absolute;
   top: -0.5rem;
-  left: -0.5rem;
+  left: 0;
+  transition: transform 0.3s ease-out;
+} */
+
+.dial-container:hover #needle {
+  border-right: 9rem solid var(--primary-color);
 }
 
 /* --- Legenda do resultado --- */
-.results-summary {
+.imc-wrapper,
+.classification-wrapper {
+  font-size: 1.2rem;
+  height: 100%;
+  grid-row: 1;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  gap: 1rem;
-  align-self: center;
+  align-items: center;
 }
 
-.result-info {
-  font-size: 2.074rem;
+.imc-wrapper {
+  background-color: #fff;
 }
-
-#classification {
+.classification-wrapper {
   font-weight: 600;
-  color: #2a9d8f;
   text-transform: uppercase;
+  background-color: #fff;
 }
 
 /* --- Mais explicações sobre o resultado --- */
-.results-details {
-  font-size: 1rem;
-  color: var(--primary-color);
-  margin-top: 1rem;
-  grid-column: span 2;
+.large-paragraph {
+  grid-column: 1 / -1;
 }
