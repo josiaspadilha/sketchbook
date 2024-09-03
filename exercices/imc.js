@@ -234,3 +234,29 @@ form.addEventListener('submit', e => {
     }
   }
 });
+
+// const carouselContainer = document.querySelector('.add-info-container');
+// const totalCards = document.querySelectorAll('.additional-info').length;
+// const prevArrow = document.querySelector('.arrow-previous');
+// const nextArrow = document.querySelector('.arrow-next');
+
+// let currentCard = 0;
+
+// function moveCard() {
+//   const offset = (-100 / totalCards) * currentCard;
+//   carouselContainer.style.transform = `translateX(${offset}%)`;
+// }
+
+// prevArrow.addEventListener('click', () => {
+//   if (currentCard > 0) {
+//     currentCard--;
+//     moveCard();
+//   }
+// });
+
+// nextArrow.addEventListener('click', () => {
+//   if (currentCard < totalCards - 1) {
+//     currentCard++;
+//     moveCard();
+//   }
+// });

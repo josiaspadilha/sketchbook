@@ -94,36 +94,197 @@
           <div class="dial"></div>
           <div id="needle"></div>
         </figure>
-        <p id="imc-result" class="hover-lift imc-wrapper"></p>
-        <p id="classification" class="hover-lift classification-wrapper"></p>
-        </section>
-        <section class="container">
-          <h3>Entenda o resultado</h3>
-          <div class="container-grid">
-          <p class="large-paragraph">
-            O IMC é um dos parâmetros utilizados para avaliar o estado nutricional e o risco de
-            mortalidade em adultos. Para
-            crianças e adolescentes de até 19 anos, o indicador mais utilizado é
-            o escore Z do IMC, que ajusta o IMC conforme a idade e o sexo para
-            fornecer uma avaliação mais precisa do estado nutricional durante o
-            crescimento.
-          </p>
-        </div>
+        <p id="imc-result" class="imc-wrapper box-info hover-lift"></p>
+        <p
+          id="classification"
+          class="classification-wrapper box-info hover-lift"
+        ></p>
       </div>
     </section>
-    <a
-      href="https://abeso.org.br/obesidade-e-sindrome-metabolica/calculadora-imc/"
-      >https://abeso.org.br/obesidade-e-sindrome-metabolica/calculadora-imc/</a
-    ><br />
-    <a
-      href="https://interativos.ge.globo.com/eu-atleta/especial/calculadora-de-imc"
-      >https://interativos.ge.globo.com/eu-atleta/especial/calculadora-de-imc</a
-    ><br />
-    <a
-      href="https://www.who.int/europe/news-room/fact-sheets/item/a-healthy-lifestyle---who-recommendations"
-      >https://www.who.int/europe/news-room/fact-sheets/item/a-healthy-lifestyle---who-recommendations</a
-    >
+    <section class="container">
+      <h3>Entenda o resultado</h3>
+      <div class="container-grid">
+        <p class="large-paragraph">
+          O IMC é um dos parâmetros utilizados para avaliar o estado nutricional
+          de um adulto e o risco de desenvolver problemas de saúde, como doenças
+          cardíacas, diabetes e hipertensão. Para crianças e adolescentes de até
+          19 anos, o indicador mais utilizado é o escore Z do IMC, que ajusta o
+          IMC conforme a idade e o sexo para fornecer uma avaliação mais precisa
+          do estado nutricional durante o crescimento.
+        </p>
+        <ul class="legend-container">
+          <li class="legend-list severe-uw">
+            <span>Menor que 17 |</span> Muito abaixo do peso
+          </li>
+          <li class="legend-list underweight">
+            <span>Entre 17 e 18,5 |</span> Abaixo do peso
+          </li>
+          <li class="legend-list normal">
+            <span>Entre 18,5 e 25 |</span> Peso desejável
+          </li>
+          <li class="legend-list overweight">
+            <span>Entre 25 e 30 |</span> Sobrepeso
+          </li>
+          <li class="legend-list obesity-i">
+            <span>Entre 30 e 35 |</span> Obesidade grau I
+          </li>
+          <li class="legend-list obesity-ii">
+            <span>Entre 35 e 40 |</span> Obesidade grau II
+            (severa)
+          </li>
+          <li class="legend-list obesity-iii">
+            <span>Maior que 40 |</span> Obesidade grau III
+            (mórbida)
+          </li>
+        </ul>
+        <div class="carousel">
+          <!-- <nav class="carousel-nav">
+              <div>
+                <ion-icon
+                  class="arrow arrow-previous"
+                  size="large"
+                  name="caret-back"
+                ></ion-icon>
+              </div>
+              <div>
+                <ion-icon
+                  class="arrow arrow-next"
+                  size="large"
+                  name="caret-forward"
+                ></ion-icon>
+              </div>
+            </nav> -->
+          <div class="add-info-container">
+            <article class="additional-info active severe-uw">
+              <span>Muito abaixo do peso</span><p> Seu peso está
+              muito abaixo do ideal, o que pode causar fraqueza e problemas
+              nutricionais. Consulte um médico para ajustar sua dieta e melhorar
+              sua saúde.</p>
+            </article>
+            <article class="additional-info underweight">
+              <span>Abaixo do peso</span> <p>Você está
+              ligeiramente abaixo do peso ideal, o que pode afetar a energia e a
+              imunidade. Considere ajustar sua dieta com um nutricionista para
+              um ganho saudável.</p>
+            </article>
+            <article class="additional-info normal">
+              <span>Peso desejável</span> <p>Parabéns! Seu peso está
+              ideal, o que reduz riscos de doenças crônicas e proporciona melhor
+              qualidade de vida. Continue com uma dieta equilibrada e exercícios
+              regulares para manter sua saúde.
+            </article></p>
+            <article class="additional-info overweight">
+              <span>Sobrepeso</span> <p>Você está acima do peso
+              ideal, o que pode aumentar o risco de doenças cardíacas e
+              diabetes. Melhorar a dieta e a atividade física pode ajudar a
+              reduzir esses riscos.</p>
+            </article>
+            <article class="additional-info obesity-i">
+              <span>Obesidade grau I</span> <p>Obesidade grau I
+              pode elevar o risco de hipertensão e diabetes. Considere um plano
+              de dieta e exercícios com orientação médica para melhorar sua
+              saúde.</p>
+            </article>
+            <article class="additional-info obesity-ii">
+              <span>Obesidade grau II (severa)</span> <p>Você
+              pode ter problemas graves como doenças cardíacas e problemas nas
+              articulações. Busque ajuda médica para um plano de tratamento e
+              mudanças de estilo de vida.</p>
+            </article>
+            <article class="additional-info obesity-iii">
+              <span>Obesidade grau III (mórbida)</span><p>
+              Seu estado de saúde é grave e pode levar a complicações sérias
+              como doenças cardíacas e respiratórias. Procure orientação médica
+              urgente para um plano de tratamento abrangente.</p>
+            </article>
+          </div>
+        </div>
+        <!-- <ul class="legend-container">
+          <li class="legend-list">
+            <span class="severe-uw">Abaixo de -3 |</span> Muito abaixo do peso
+          </li>
+          <li class="legend-list">
+            <span class="underweight">Entre -3 e -2 |</span> Abaixo do peso
+          </li>
+          <li class="legend-list">
+            <span class="normal">Entre -2 e 1 |</span> Peso desejável
+          </li>
+          <li class="legend-list">
+            <span class="overweight">Entre 1 e 2 |</span> Sobrepeso
+          </li>
+          <li class="legend-list">
+            <span class="obesity-i">Acima de 2 |</span> Obesidade
+          </li>
+        </ul>
 
+        <div class="carousel-container">
+          <div class="carousel">
+            <nav class="carousel-nav">
+              <div>
+                <ion-icon
+                  class="arrow arrow-previous"
+                  size="large"
+                  name="caret-back"
+                ></ion-icon>
+              </div>
+              <div>
+                <ion-icon
+                  class="arrow arrow-next"
+                  size="large"
+                  name="caret-forward"
+                ></ion-icon>
+              </div>
+            </nav>
+            <div class="add-info-container">
+              <article class="additional-info box-info hover-lift">
+                <span class="severe-uw">Muito abaixo do peso</span> O resultado
+                está muito abaixo do esperado para sua idade e altura. Busque
+                orientação médica para identificar as causas e ajustar sua
+                dieta. Um plano alimentar adequado garantirá a ingestão de
+                nutrientes essenciais para o crescimento saudável.
+              </article>
+              <article class="additional-info box-info hover-lift">
+                <span class="underweight">Abaixo do peso</span> Você está um
+                pouco abaixo do peso ideal. Um profissional da saúde deve
+                avaliar se está tudo bem com você ou se o resultado indica que é
+                preciso uma mudança de hábitos para garantir uma nutrição
+                adequada.
+              </article>
+              <article class="additional-info box-info hover-lift">
+                <span class="normal">Peso desejável</span> Seu peso está dentro
+                da faixa ideal para sua idade e altura. Continue com uma
+                alimentação equilibrada e um estilo de vida ativo para manter
+                sua saúde em dia. Não esqueça de brincar, correr e fazer muita
+                atividade física.
+              </article>
+              <article class="additional-info box-info hover-lift">
+                <span class="overweight">Sobrepeso</span> Você está com
+                sobrepeso. Quanto mais cedo melhorar seus hábitos, mais fácil
+                será ter uma boa alimentação e aumentar a atividade física.
+                Consultar um nutricionista pode ajudar a família a fazer os
+                ajustes necessários na rotina.
+              </article>
+              <article class="additional-info box-info hover-lift">
+                <span class="obesity-i">Obesidade</span> Seu peso está na faixa
+                da obesidade. Busque ajuda de profissionais de saúde para
+                desenvolver um plano que inclua mudanças na alimentação e
+                aumento das atividades físicas, visando melhorar sua saúde
+                geral.
+              </article>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </section>
+    <div style="height: 10rem"></div>
     <script src="imc.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </body>
 </html>
