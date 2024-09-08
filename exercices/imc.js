@@ -30,6 +30,13 @@ const dial = document.querySelector('.dial');
 const needle = document.querySelector('#needle');
 const reset = document.querySelector('button[type="reset"]');
 
+// Container de resultados que estão com visibility hidden
+const summaryResults = document.querySelector('.summary-results');
+const adultDataLegend = document.querySelector('.adults-info-legend');
+const adultDataCarousel = document.querySelector('.adults-info-carousel');
+const childrenDataLegend = document.querySelector('.children-info-legend');
+const childrenDataCarousel = document.querySelector('.children-info-carousel');
+
 // Tabela LMS para meninos de 5 a 19 anos
 const lmsBoys = {
   5: [-0.7387, 15.2641, 0.0839],
@@ -73,19 +80,16 @@ reset.addEventListener('click', () => {
   needle.style.transform = 'translate(-100%, 0) rotate(0deg)';
   classificationEl.textContent = '';
   classificationEl.style.backgroundColor = '';
+  IMC.textContent = '';
 });
 
-// Calcula a direção da seta no gráfico
-function calcNeedlePosition(imc, valMin, ratio) {
-  const needlePosition = ((imc - valMin) * 180) / ratio;
-
-  if (needlePosition > 180) {
-    return 180;
-  } else if (needlePosition < 0) {
-    return 0;
-  } else {
-    return needlePosition;
-  }
+// Revela container escondido com os resultados ao submeter dados
+function revealResults(show1, show2, hide1, hide2) {
+  summaryResults.classList.add('show');
+  show1.classList.add('show');
+  show2.classList.add('show');
+  hide1.classList.remove('show');
+  hide2.classList.remove('show');
 }
 
 // Exibir classificação de acordo com resultado do IMC
@@ -130,6 +134,19 @@ function displayIMC(imc, isAdult, imcValue, needlePosition) {
   }
 }
 
+// Calcula a direção da seta no gráfico
+function calcNeedlePosition(imc, valMin, ratio) {
+  const needlePosition = ((imc - valMin) * 180) / ratio;
+
+  if (needlePosition > 180) {
+    return 180;
+  } else if (needlePosition < 0) {
+    return 0;
+  } else {
+    return needlePosition;
+  }
+}
+
 // Validação dos dados inseridos no formulário
 function validateNumbers(value, element, minValue) {
   if (value < minValue || isNaN(value)) {
@@ -161,8 +178,7 @@ form.addEventListener('submit', e => {
 
   if (isValid) {
     // Cálculo do IMC
-    const calcIMC = (weight / (height / 100) ** 2).toFixed(2);
-    console.log('IMC: ', calcIMC);
+    const calcIMC = weight / (height / 100) ** 2;
 
     if (age > 19) {
       // Gira o gráfico para exibir o mostrador para adultos
@@ -177,9 +193,22 @@ form.addEventListener('submit', e => {
         `Seu IMC é: ${calcIMC.replace('.', ',')}`,
         `translate(-100%, 0) rotate(${needlePosition}deg)`
       );
+
+      revealResults(
+        adultDataLegend,
+        adultDataCarousel,
+        childrenDataLegend,
+        childrenDataCarousel
+      );
     } else {
       // Gira o gráfico para exibir o mostrador para crianças e adolescentes
       dial.style.transform = 'rotate(90deg)';
+      revealResults(
+        childrenDataLegend,
+        childrenDataCarousel,
+        adultDataLegend,
+        adultDataCarousel
+      );
 
       // Cálculo do escore Z para 19 anos ou menos
       function finalScoreAndBiotype(lms) {
@@ -191,9 +220,9 @@ form.addEventListener('submit', e => {
         // Ajuste do desvio padrão em valores < -3 ou > 3
         function zScoreAdjustment(x, y) {
           const sd3 = m * (1 + l * s * x) ** (1 / l);
-          console.log('sd3: ', sd3);
+
           const sd2 = m * (1 + l * s * y) ** (1 / l);
-          console.log('sd2: ', sd2);
+
           if (x > 0) {
             const sd23 = sd3 - sd2;
             return (x + (calcIMC - sd3)) / sd23;
@@ -235,28 +264,28 @@ form.addEventListener('submit', e => {
   }
 });
 
-// const carouselContainer = document.querySelector('.add-info-container');
-// const totalCards = document.querySelectorAll('.additional-info').length;
-// const prevArrow = document.querySelector('.arrow-previous');
-// const nextArrow = document.querySelector('.arrow-next');
+// Carrossel com cards informativos sobre cada índice IMC
+const carouselContainer = document.querySelector('.cards-container');
+const cards = document.querySelectorAll('.info-cards');
+const cardsNav = document.querySelectorAll('.legend-list');
+const cardHeight = 20.5;
 
-// let currentCard = 0;
+// Adiciona ouvinte de evento a cada item de navegação
+cardsNav.forEach((navLink, i) => {
+  navLink.addEventListener('click', () => {
+    // Cria o movimento do carrosel para o card clicado
+    carouselContainer.style.transform = `translateY(${i * -cardHeight}rem)`;
+    carouselContainer.style.transition = `transform 1s ease`;
 
-// function moveCard() {
-//   const offset = (-100 / totalCards) * currentCard;
-//   carouselContainer.style.transform = `translateX(${offset}%)`;
-// }
-
-// prevArrow.addEventListener('click', () => {
-//   if (currentCard > 0) {
-//     currentCard--;
-//     moveCard();
-//   }
-// });
-
-// nextArrow.addEventListener('click', () => {
-//   if (currentCard < totalCards - 1) {
-//     currentCard++;
-//     moveCard();
-//   }
-// });
+    // Aplica estilos para destacar o card selecionado
+    cards.forEach(function (card, index) {
+      if (i === index) {
+        card.style.transform = `scale(1)`;
+        card.style.opacity = 1;
+      } else {
+        card.style.transform = `scale(0.5)`;
+        card.style.opacity = 0;
+      }
+    });
+  });
+});
